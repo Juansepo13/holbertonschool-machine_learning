@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-
-""" Module that multiplies two matrices """
-
-
+"""
+Module that multiplies two matrices
+"""
 import numpy as np
+
 
 def np_matmul(mat1, mat2):
     """
