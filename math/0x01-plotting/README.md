@@ -10,7 +10,7 @@ For Holberton School
 Cohort 16.
 ```
 ## General
-![img1](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/664b2543b48ef4918687.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220801T151722Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d5a8806a9da22f90fe07dcfcceb37f2cb38d9ac33d6f6b78abf06b157c0fba2e)
+[img1](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/664b2543b48ef4918687.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220801T151722Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d5a8806a9da22f90fe07dcfcceb37f2cb38d9ac33d6f6b78abf06b157c0fba2e)
 Line Graph
 
 ![imag2](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/1b143961d254e65afa2c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220801T151722Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=04dc09828e688e03d2fdbcb58697413abdb8e4255bc70b6729201993cb9231e4)
