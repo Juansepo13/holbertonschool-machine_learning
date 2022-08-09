@@ -48,7 +48,7 @@ Cohort 16.
 * numpy.random.binomial
 * erf
 
-![Alt text]()
+![Alt text](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2019/4/5e71204ca545072e8766.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220809%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220809T170656Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=254a899b9d76194729719a990fd94664f03f30746ff2d7ef72e1daf748288587)
 
 ## Extra resources around relational:
 
