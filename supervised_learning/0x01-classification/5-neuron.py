@@ -1,63 +1,127 @@
 #!/usr/bin/env python3
-"""
-Module for class Neuron
-"""
+"""Module containing the class Neuron which defines a single neuron performing
+binary classification"""
+
 import numpy as np
 
 
-class Neuron:
+class Neuron():
+    """Class which defines a single neuron performing binary classification
     """
-    Defines a single neuron performing binary classification
-    """
-
     def __init__(self, nx):
-        """ Class constructor """
-        if type(nx) is not int:
+        """Initizilation function for Neuron
+
+        Args:
+            nx (int): The number of input features to the neuron
+        """
+        if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
-        if nx < 1:
+        elif nx < 1:
             raise ValueError("nx must be a positive integer")
-        self.__W = np.random.randn(1, nx)
-        self.__b = 0
-        self.__A = 0
+        else:
+            self.__W = np.random.randn(1, nx)
+            self.__b = 0
+            self.__A = 0
 
     @property
     def W(self):
-        """ Getter function for W """
+        """Getter for private instance atribute W.
+
+        Returns:
+            [float]: The weights vector for the neuron.
+        """
         return self.__W
 
     @property
     def b(self):
-        """ Getter function for b """
+        """Getter for private instance atribute b
+
+        Returns:
+            [float]: The bias for the neuron.
+        """
         return self.__b
 
     @property
     def A(self):
-        """ Getter function for A """
+        """Getter for private instance atribute
+
+        Returns:
+            [numpy.ndarray]: The activated output of the neuron.
+        """
         return self.__A
 
     def forward_prop(self, X):
-        """ Calculates the forward propagation of the neuron """
-        z = np.matmul(self.__W, X) + self.__b
-        self.__A = 1 / (1 + np.exp(-z))
+        """Function that calculates the forward propagation of the neuron.
+        Uses Logistic Regresssion.
+
+        Args:
+            X (numpy.ndarray): N-dimensional array with the shape (nx, m) that
+                contains the input data, where nx is the number of input
+                features to the neuron and m is the number of examples.
+
+        Returns:
+            [float]: The activated output of the neuron (self.__A).
+        """
+        z = np.dot(self.W, X) + self.b
+        self.__A = 1/(1 + np.exp(-z))  # Sigmoid
         return self.__A
 
     def cost(self, Y, A):
-        """ Calculates the cost of the model using logistic regression """
-        m = Y.shape[1]
-        cosst = (-1 / m) * np.sum(Y * np.log(A) + (1 - Y) * np.log(1.0000001 - A))
-        return cosst
+        """Function that alculates the cost of the model using
+            logistic regression
+
+        Args:
+            Y (numpy.ndarray): N-dimensional array with shape (1, m) that
+                contains the correct labels for the input data.
+            A (numpy.ndarray): N-dimensioal array with shape (1, m) containing
+                the activated output of the neuron for each example.
+                Sometiems refered to as "y hat" a y with a "^" above it.
+        """
+        shape = Y.shape
+        m = shape[1]
+        cost_array = -((Y * np.log(A)) + ((1 - Y) * np.log(1.0000001 - A)))
+        return np.sum(cost_array) / m
 
     def evaluate(self, X, Y):
-        """ Evaluates the neuron’s predictions """
+        """Function that valuates the neuron’s predictions.
+
+        Args:
+            X (numpy.ndarray): N-dimensioal array with shape (nx, m) that
+                contains the input data, where nx is the number of input
+                features to the neuron and m is the number of examples.
+            Y (numpy.ndarray): N-dimensioal array with shape (1, m) that
+                contains the correct labels for the input data.
+
+        Returns:
+            A (numpy.ndarray): The neuron’s prediction. The predictions shape
+                will be (1, m), containing the predicted labels for each
+                example.
+            cost (float): The cost of the network.
+        """
         A = self.forward_prop(X)
-        pred = np.where(A >= 0.5, 1, 0)
-        costt = self.cost(Y, A)
-        return pred, costt
+        cost = self.cost(Y, A)
+        A = np.where(A >= 0.5, 1, 0)
+        return A, cost
 
     def gradient_descent(self, X, Y, A, alpha=0.05):
-        """ Calculates one pass of gradient descent on the neuron """
-        m = X.shape[1]
-        dw = (1 / m) * np.matmul(X, (A - Y).T)
-        db = (1 / m) * np.sum(A - Y)
-        self.__W = self.__W - alpha * dw
-        self.__b = self.__b - alpha * db
+        """Function that calculates one pass of gradient descent on the neuron.
+
+        Args:
+            X (numpy.ndarray): N-dimensioal array with shape (nx, m) that
+                contains the input data, where nx is the number of input
+                features to the neuron and m is the number of examples.
+            Y (numpy.ndarray): N-dimensioal array with shape (1, m) that
+                contains the correct labels for the input data.
+            A (numpy.ndarray): N-dimensioal array with shape (1, m) that
+                contains the activated output of the neuron for each example.
+            alpha (float, optional): The learning rate. Defaults to 0.05.
+        """
+        shape = X.shape
+        m = shape[1]
+        dZ = A - Y
+        dW = (np.matmul(X, dZ.T) / m).T
+        db = np.sum(dZ) / m
+        W = self.W - (alpha * dW)
+        b = self.b - (alpha * db)
+        self.__W = W
+        self.__b = b
