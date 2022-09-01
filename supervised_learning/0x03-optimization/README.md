@@ -8,6 +8,9 @@ Cohort 16.
 ```
 ## General
 
+![img](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/11/2bc924532bc4a901e74d.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220901%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220901T160721Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=b1e140e9ff50515705699f5652dcb691fe8dd7b65a564a04b9d5fb1a09d65868)
+
+![img6](https://miro.medium.com/max/578/1*65Mxg_Yfq-L7AvaS0K5aGA.png)
 ## Resources
 * Hyperparameter (machine learning)
 * Feature scaling
@@ -49,7 +52,7 @@ Cohort 16.
 
 ## Read or watch:
 
-![Alt text]()
+
 
 ## Extra resources around relational:
 
