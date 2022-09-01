@@ -3,7 +3,7 @@
 import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_eager_execution()
-train_mini_batch = __import__('3-mini_batch').train_mini_batch
+model = __import__('15-model').model
 
 def one_hot(Y, classes):
     """convert an array to a one-hot matrix"""
@@ -24,11 +24,9 @@ if __name__ == '__main__':
 
     layer_sizes = [256, 256, 10]
     activations = [tf.nn.tanh, tf.nn.tanh, None]
-    alpha = 0.01
-    iterations = 5000
 
     np.random.seed(0)
-    save_path = train_mini_batch(X_train, Y_train_oh, X_valid, Y_valid_oh,
-                                 epochs=10, load_path='./graph.ckpt',
-                                 save_path='./model.ckpt')
+    tf.set_random_seed(0)
+    save_path = model((X_train, Y_train_oh), (X_valid, Y_valid_oh), layer_sizes,
+                                 activations, save_path='./model.ckpt')
     print('Model saved in path: {}'.format(save_path))
