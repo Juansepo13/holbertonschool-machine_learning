@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-""" Cost L2 regularization """
-import tensorflow as tf
+"""
+2. L2 Regularization Cost
+"""
+import tensorflow.compat.v1 as tf
 
 
 def l2_reg_cost(cost):
-    """ Cost L2 regularization """
-    loss = tf.losses.get_regularization_losses()
-    return cost + loss
+    """
+    Calculates the cost of a neural network with L2 regularization
+    cost: tensor containing the cost without L2 reg
+    Returns: a tensor containing the cost with L2 regularization
+    """
+    return cost + tf.losses.get_regularization_losses()
