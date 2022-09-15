@@ -6,7 +6,7 @@
 For Holberton School
 Cohort 16.
 ```
-<img src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/11/ed9ca14839ad0201f19e.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220915%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220915T150136Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=62cdd18445784834f1c84217c437836d40f550544048cb4ea54f91b37142060c" alt="My cool logo"/>
+![imagen1](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/11/ed9ca14839ad0201f19e.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220915%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220915T150136Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=62cdd18445784834f1c84217c437836d40f550544048cb4ea54f91b37142060c)
 
 
 ## General
