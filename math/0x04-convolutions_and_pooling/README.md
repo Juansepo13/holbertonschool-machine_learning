@@ -6,7 +6,7 @@
 For Holberton School
 Cohort 16.
 ```
-![imagen1](https://docs.ecognition.com/Resources/Images/ECogUsr/UG_CNN_scheme.png)
+![imagen1](https://i0.wp.com/vinodsblog.com/wp-content/uploads/2018/10/CNN-2.png?resize=1300%2C479&ssl=1)
 
 
 ## General
