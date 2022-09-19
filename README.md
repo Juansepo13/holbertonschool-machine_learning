@@ -7,7 +7,7 @@ For Holberton School
 Cohort 16.
 ```
 
-![hijodeputa](https://blog.bismart.com/hs-fs/hubfs/02-MachinelearningVSDeeplearning_Mesa%20de%20trabajo%201%20copia%202_Mesa%20de%20trabajo%201%20copia%202.jpg?width=3509&name=02-MachinelearningVSDeeplearning_Mesa%20de%20trabajo%201%20copia%202_Mesa%20de%20trabajo%201%20copia%202.jpg)
+
 
 ## Author
 ***
