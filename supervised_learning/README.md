@@ -7,7 +7,7 @@ For Holberton School
 Cohort 16.
 ```
 
-![Alt text](https://cdn.ttgtmedia.com/rms/onlineImages/enterpriseai-machine_learning_models_cheat_sheet-f_mobile.png)
+![Alt text](https://cdn.ttgtmedia.com/rms/onlineImages/enterpriseai-machine_learning_models_cheat_sheet-f.png)
 
 ## Author
 ***
