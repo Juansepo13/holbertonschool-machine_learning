@@ -7,9 +7,8 @@ For Holberton School
 Cohort 16.
 ```
 
-![img1](https://miro.medium.com/max/1400/1*1AW_2jPV1YoXlt7wUWf-lA.png)
+![img1](https://i.ytimg.com/vi/OIVja_NSJ0w/maxresdefault.jpg)
 
-## Author
 ***
 *Holberton School Student*
 
