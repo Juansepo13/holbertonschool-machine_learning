@@ -1,75 +1,89 @@
 #!/usr/bin/env python3
 """
-File Name: 3-variational.py
+0x04. Autoencoders
 """
 import tensorflow.keras as keras
 
 
 def autoencoder(input_dims, hidden_layers, latent_dims):
     """
-    Function that creates a variational autoencoder:
-    Arguments:
-        - input_dims is an integer containing the dimensions of the model input
-        - hidden_layers is a list containing the number of nodes for each
-                        hidden layer in the encoder, respectively
-            * the hidden layers should be reversed for the decoder
-        - latent_dims is an integer containing the dimensions of the latent
-                      space representation
+    creates a variational autoencoder:
+    input_dims is an integer containing the dimensions of the model input
+    hidden_layers is a list containing the number of nodes for each hidden
+        layer in the encoder, respectively
+        the hidden layers should be reversed for the decoder
+    latent_dims is an integer containing the dimensions of the latent space
+        representation
     Returns: encoder, decoder, auto
-        - encoder is the encoder model, which should output the latent
-                  representation, the mean, and the log variance, respectively
-        - decoder is the decoder model
-        - auto is the full autoencoder model
+        encoder is the encoder model, which should output the latent
+        representation, the mean, and the log variance, respectively
+        decoder is the decoder model
+        auto is the full autoencoder model
     The autoencoder model should be compiled using adam optimization and binary
-    cross-entropy loss
+        cross-entropy loss
     All layers should use a relu activation except for the mean and log
-    variance layers in the encoder, which should use None, and the last
-    layer in the decoder, which should use sigmoid
-    [Expected]
-    Autoencoder model is compiled correctly
-    5.44117e+02
+        variance layers in the encoder, which should use None, and the last
+        layer in the decoder, which should use sigmoid
     """
-    # Encoder
-    input_encoder = keras.Input(shape=(input_dims,))
-    encoded = keras.layers.Dense(
-        hidden_layers[0], activation='relu')(input_encoder)
-    for i in range(1, len(hidden_layers)):
-        encoded = keras.layers.Dense(
-            hidden_layers[i], activation='relu')(encoded)
+    inputs = keras.Input(shape=(input_dims,))
+    enc = inputs
 
-    # Latent space
-    mean = keras.layers.Dense(latent_dims, activation=None)(encoded)
-    log_var = keras.layers.Dense(latent_dims, activation=None)(encoded)
+    for layer_dims in hidden_layers:
+        enc = keras.layers.Dense(units=layer_dims, activation="relu")(enc)
 
-    # Sampling
+    mean = keras.layers.Dense(units=latent_dims)(enc)
+    log_sigma = keras.layers.Dense(units=latent_dims)(enc)
+
     def sampling(args):
-        """
-        Sampling function
-        """
-        mean, log_var = args
-        epsilon = keras.backend.random_normal(
-            shape=keras.backend.shape(mean), mean=0., stddev=1.)
-        return mean + keras.backend.exp(log_var / 2) * epsilon
+        mean, log_sigma = args
+        epsilon = keras.backend.random_normal(shape=(keras.backend
+                                                     .shape(mean)[0],
+                                                     latent_dims),
+                                              mean=0, stddev=0.1)
+        return mean + keras.backend.exp(log_sigma) * epsilon
 
-    z = keras.layers.Lambda(sampling)([mean, log_var])
+    z = keras.layers.Lambda(sampling, output_shape=(latent_dims,)
+                            )([mean, log_sigma])
 
-    # Decoder
-    input_decoder = keras.Input(shape=(latent_dims,))
-    decoded = keras.layers.Dense(
-        hidden_layers[-1], activation='relu')(input_decoder)
-    for i in range(len(hidden_layers) - 2, -1, -1):
-        decoded = keras.layers.Dense(
-            hidden_layers[i], activation='relu')(decoded)
-    decoded = keras.layers.Dense(input_dims, activation='sigmoid')(decoded)
+    dec_input = keras.Input(shape=(latent_dims,))
+    dec = dec_input
 
-    # Encoder model
-    encoder = keras.Model(inputs=input_encoder, outputs=[z, mean, log_var])
+    for layer_dims in reversed(hidden_layers):
+        dec = keras.layers.Dense(units=layer_dims, activation="relu")(dec)
 
-    # Decoder model
-    decoder = keras.Model(inputs=input_decoder, outputs=decoded)
+    dec_output_layer = keras.layers.Dense(units=input_dims,
+                                          activation="sigmoid")(dec)
 
-    # Autoencoder model
-    auto = keras.Model(inputs=input_encoder,
-                       outputs=decoder(encoder(input_encoder)[0]))
-    auto.compile(optimizer='adam', loss='binary_crossentropy')
+    encoder = keras.Model(inputs=inputs, outputs=[z, mean, log_sigma])
+    decoder = keras.Model(inputs=dec_input, outputs=dec_output_layer)
+
+    outputs = decoder(encoder(inputs)[0])
+    auto = keras.Model(inputs=inputs, outputs=outputs)
+
+    def custom_loss(inputs, outputs, input_dims, log_sigma, mean):
+        """custom loss function"""
+        def loss(inputs, outputs):
+            """loss of the custom loss"""
+            rec_loss = keras.losses.binary_crossentropy(inputs, outputs)
+            rec_loss *= input_dims
+            kl_loss = (1 + log_sigma - keras.backend
+                       .square(mean) - keras.backend.exp(log_sigma))
+            kl_loss = keras.backend.sum(kl_loss, axis=-1)
+            kl_loss *= -0.5
+            vae_loss = keras.backend.mean(rec_loss + kl_loss)
+            return vae_loss
+        return loss
+
+    opt = keras.optimizers.Adam()
+    loss = "binary_crossentropy"
+
+    encoder.compile(loss=loss, optimizer=opt)
+    decoder.compile(loss=loss, optimizer=opt)
+    auto.compile(loss=custom_loss(inputs,
+                                  outputs,
+                                  input_dims,
+                                  log_sigma,
+                                  mean),
+                 optimizer=opt)
+
     return encoder, decoder, auto
