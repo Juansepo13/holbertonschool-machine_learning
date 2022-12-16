@@ -31,8 +31,3 @@ def rnn(rnn_cell, X, h_0):
     for t in range(t):
         H[t + 1], Y[t] = rnn_cell.forward(H[t], X[t])
     return H, Y
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Priv
