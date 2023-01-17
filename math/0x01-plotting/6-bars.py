@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 import numpy as np
+import matplotlib 
+
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 
 np.random.seed(5)
@@ -24,5 +28,5 @@ p4 = ax.bar(people, fruit[3], width, bottom=fruit[0]+fruit[1]+fruit[2],
 ax.set_ylabel('Quantity of Fruit')
 ax.set_ylim(0, 80)
 ax.legend()
-
 plt.show()
+plt.savefig('6-bars.png')

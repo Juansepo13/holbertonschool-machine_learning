@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 
 y0 = np.arange(0, 11) ** 3
@@ -80,3 +84,25 @@ plt4.hist(student_grades, bins=10, color='#228BC2',
 plt.tight_layout()
 plt.suptitle('All in One')
 plt.show()
+plt.savefig('5-all_in_one.png')
+
+# #!/usr/bin/env python3
+# import numpy as np
+# import matplotlib
+
+# matplotlib.use('Agg')
+
+# import matplotlib.pyplot as plt
+
+# mean = [69, 0]
+# cov = [[15, 8], [8, 15]]
+# np.random.seed(5)
+# x, y = np.random.multivariate_normal(mean, cov, 2000).T
+# y += 180
+
+# plt.scatter(x, y, color='m')
+# plt.xlabel('Height (in)')
+# plt.ylabel('Weight (lbs)')
+# plt.title("Men's Height vs Weight")
+# plt.show()
+# plt.savefig('1-scatter.png')
