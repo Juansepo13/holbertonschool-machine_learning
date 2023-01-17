@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
+
 convolve_channels = __import__('4-convolve_channels').convolve_channels
 
 
@@ -16,5 +21,7 @@ if __name__ == '__main__':
 
     plt.imshow(images[0])
     plt.show()
+    plt.savefig('4-convolve_channel1.png')
     plt.imshow(images_conv[0])
     plt.show()
+    plt.savefig('4-convolve_channel2.png')
