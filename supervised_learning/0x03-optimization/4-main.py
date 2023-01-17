@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
+
 moving_average = __import__('4-moving_average').moving_average
 
 if __name__ == '__main__':
@@ -16,3 +21,4 @@ if __name__ == '__main__':
         plt.title('SF Maximum Temperatures in October 2018')
         plt.legend(['actual', 'moving_average'])
         plt.show()
+        plt.savefig('4-moving_average.png')

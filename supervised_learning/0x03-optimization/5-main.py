@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib 
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 update_variables_momentum = __import__('5-momentum').update_variables_momentum
 
 def forward_prop(X, W, b):
@@ -55,3 +59,4 @@ if __name__ == '__main__':
         plt.axis('off')
     plt.tight_layout()
     plt.show()
+    plt.savefig('5-momentum.png')
