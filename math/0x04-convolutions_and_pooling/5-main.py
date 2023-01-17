@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 convolve = __import__('5-convolve').convolve
 
 
@@ -19,9 +23,14 @@ if __name__ == '__main__':
 
     plt.imshow(images[0])
     plt.show()
+    plt.savefig('5-convolve1.png')
     plt.imshow(images_conv[0, :, :, 0])
     plt.show()
+    plt.savefig('5-convolve2.png')
     plt.imshow(images_conv[0, :, :, 1])
     plt.show()
+    plt.savefig('5-convolve3.png')
     plt.imshow(images_conv[0, :, :, 2])
     plt.show()
+    plt.savefig('5-convolve4.png')
+
