@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib 
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
+
 update_variables_RMSProp = __import__('7-RMSProp').update_variables_RMSProp
 
 def forward_prop(X, W, b):
@@ -55,3 +59,4 @@ if __name__ == '__main__':
         plt.axis('off')
     plt.tight_layout()
     plt.show()
+    plt.savefig('7-RMSProp.png')
