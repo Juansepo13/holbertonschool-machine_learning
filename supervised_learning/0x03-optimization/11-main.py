@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
+
+
 learning_rate_decay = __import__('11-learning_rate_decay').learning_rate_decay
 
 if __name__ == '__main__':

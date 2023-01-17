@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
 import tensorflow.compat.v1 as tf
 tf.disable_eager_execution()
 create_Adam_op = __import__('10-Adam').create_Adam_op
@@ -47,3 +51,4 @@ if __name__ == '__main__':
         plt.axis('off')
     plt.tight_layout()
     plt.show()
+    plt.savefig('10-Adam.png')
