@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+
 pool = __import__('6-pool').pool
 
 
@@ -15,5 +20,7 @@ if __name__ == '__main__':
 
     plt.imshow(images[0])
     plt.show()
+    plt.savefig('6-pool1.png')
     plt.imshow(images_pool[0] / 255)
     plt.show()
+    plt.savefig('6-pool2.png')
