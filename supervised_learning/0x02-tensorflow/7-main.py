@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib 
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import tensorflow.compat.v1 as tf
 tf.disable_eager_execution()
 evaluate = __import__('7-evaluate').evaluate
@@ -33,3 +36,4 @@ if __name__ == '__main__':
         plt.axis('off')
     plt.tight_layout()
     plt.show()
+    plt.savefig('7-evaluate.png')
