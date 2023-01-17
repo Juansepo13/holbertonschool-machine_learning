@@ -20,6 +20,7 @@ if __name__ == '__main__':
 
     plt.imshow(images[0], cmap='gray')
     plt.show()
+    plt.savefig('0-main1.png')
     plt.imshow(images_conv[0], cmap='gray')
     plt.show()
-    plt.savefig('0-main.png')
+    plt.savefig('0-main2.png')

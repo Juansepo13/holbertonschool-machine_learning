@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
+
 convolve_grayscale_same = __import__('1-convolve_grayscale_same').convolve_grayscale_same
 
 
@@ -16,5 +21,7 @@ if __name__ == '__main__':
 
     plt.imshow(images[0], cmap='gray')
     plt.show()
+    plt.savefig('1-convolve_grayscale_same1.png')
     plt.imshow(images_conv[0], cmap='gray')
     plt.show()
+    plt.savefig('1-convolve_grayscale_same2.png')
