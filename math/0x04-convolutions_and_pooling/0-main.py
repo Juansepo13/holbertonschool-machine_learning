@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib 
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 convolve_grayscale_valid = __import__('0-convolve_grayscale_valid').convolve_grayscale_valid
 
 
@@ -18,3 +22,4 @@ if __name__ == '__main__':
     plt.show()
     plt.imshow(images_conv[0], cmap='gray')
     plt.show()
+    plt.savefig('0-main.png')
