@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib 
+
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 update_variables_Adam = __import__('9-Adam').update_variables_Adam
 
 def forward_prop(X, W, b):
@@ -57,3 +61,4 @@ if __name__ == '__main__':
         plt.axis('off')
     plt.tight_layout()
     plt.show()
+    plt.savefig('9-Adam.png')
