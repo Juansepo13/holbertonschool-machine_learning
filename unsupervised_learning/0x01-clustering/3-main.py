@@ -18,7 +18,7 @@ if __name__ == "__main__":
     print(results)
     print(np.round(d_vars, 5))
     plt.scatter(list(range(1, 11)), d_vars)
+    plt.savefig('3-optimun.png')
     plt.xlabel('Clusters')
     plt.ylabel('Delta Variance')
     plt.title('Optimizing K-means')
-    plt.show()
