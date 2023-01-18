@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import numpy as np
+import matplotlib 
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 kmeans = __import__('1-kmeans').kmeans
 
@@ -18,3 +20,4 @@ if __name__ == "__main__":
     plt.scatter(X[:, 0], X[:, 1], s=10, c=clss)
     plt.scatter(C[:, 0], C[:, 1], s=50, marker='*', c=list(range(5)))
     plt.show()
+    plt.savefig('1-kmeans.py')

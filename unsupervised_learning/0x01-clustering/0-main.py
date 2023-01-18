@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-
 import numpy as np
+import matplotlib
+
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 initialize = __import__('0-initialize').initialize
 
 if __name__ == "__main__":
@@ -15,4 +18,5 @@ if __name__ == "__main__":
     np.random.shuffle(X)
     plt.scatter(X[:, 0], X[:, 1], s=10)
     plt.show()
+    plt.savefig('0-initialie.png')
     print(initialize(X, 5))
