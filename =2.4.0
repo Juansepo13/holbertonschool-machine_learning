@@ -1,0 +1,4 @@
+Collecting tensorflow-estimator
+  Using cached tensorflow_estimator-2.11.0-py2.py3-none-any.whl (439 kB)
+Installing collected packages: tensorflow-estimator
+Successfully installed tensorflow-estimator-2.11.0
