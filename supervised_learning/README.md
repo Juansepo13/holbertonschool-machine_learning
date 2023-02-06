@@ -9,6 +9,29 @@ Cohort 16.
 
 ![hijodeputa](https://blog.bismart.com/hs-fs/hubfs/02-MachinelearningVSDeeplearning_Mesa%20de%20trabajo%201%20copia%202_Mesa%20de%20trabajo%201%20copia%202.jpg?width=3509&name=02-MachinelearningVSDeeplearning_Mesa%20de%20trabajo%201%20copia%202_Mesa%20de%20trabajo%201%20copia%202.jpg)
 
+## Files included
+
+| File                 | Details                                    |
+|--------------------- | ------------------------------------------ |
+| [0x00-q_learning]() |	       |
+| [0x0C-neural_style_transfer]() |	       |
+| [0x0D-RNNs]() |	       |
+| [0x0E-time_series]() |	       |
+| [0x0F-word_embeddings]() |	       |
+| [0x01-classification]() |	       |
+| [0x02-tensorflow]() |	       |
+| [0x03-optimization]() |	       |
+| [0x04-error_analysis]() |	       |
+| [0x05-regularization]() |	       |
+| [0x06-keras]() |	       |
+| [0x07-cnn]() |	       |
+| [0x08-deep_cnns]() |	       |
+| [0x09-transfer_learning]() |	       |
+| [0x10-nlp_metrics]() |	       |
+| [0x11-attention]() |	       |
+| [0x12-transformer_apps]() |	       |
+| [data]() | Database	       |
+
 ***
 *Holberton School Student*
 
