@@ -7,14 +7,16 @@ For Holberton School
 Cohort 16.
 ```
 ## Math
+[Math](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/math)
 
 ## Reinforcement Learning
-
+[Reinforcement Learning](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/mathhttps://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/)
 ## Supervised learning
-
+[Supervised Learning](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/supervised_learning)
 ## Unsupervised learning
-
+[Unsupervised Learning](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/unsupervised_learning)
 ## Author
+
 ***
 *Holberton School Student*
 

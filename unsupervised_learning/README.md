@@ -13,10 +13,10 @@ Cohort 16.
 | File                 | Details                                    |
 |--------------------- | ------------------------------------------ |
 | [0x00-dimensionality_reduction]() |	       |
-| []() |	       |
-| []() |	       |
-| []() |	       |
-| []() |	       |
+| [0x01-clustering]() |	       |
+| [0x02-hmm]() |	       |
+| [0x03-hyperparameter_tuning]() |	       |
+| [0x04-autoencoders]() |	       |
 | []() |	       |
 | []() |	       |
 | []() |	       |
