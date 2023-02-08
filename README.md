@@ -6,8 +6,13 @@
 For Holberton School
 Cohort 16.
 ```
+## Math
 
+## Reinforcement Learning
 
+## Supervised learning
+
+## Unsupervised learning
 
 ## Author
 ***
