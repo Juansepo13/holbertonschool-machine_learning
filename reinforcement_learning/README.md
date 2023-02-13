@@ -1,7 +1,7 @@
 # Reinforcement Learning
 ***
 ## This is a README.md for the repository
-### In GitHub []()
+### In GitHub [reinforcement_learning](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/reinforcement_learning)
 ```
 For Holberton School
 Cohort 16.
@@ -14,10 +14,8 @@ Cohort 16.
 
 | File                 | Details                                    |
 |--------------------- | ------------------------------------------ |
-| [0x00-q_learning]() |	       |
-| []() |	       |
-| []() |	       |
-| []() |	       |
+| [0x00-q_learning](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/reinforcement_learning/0x00-q_learning) |	       |
+| [0x01-deep_q_learning](https://github.com/Juansepo13/holbertonschool-machine_learning/tree/main/reinforcement_learning/0x01-deep_q_learning) |	       |
 | []() |	       |
 | []() |	       |
 | []() |	       |
