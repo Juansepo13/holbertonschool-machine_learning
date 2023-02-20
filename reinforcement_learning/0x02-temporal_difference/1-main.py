@@ -6,7 +6,7 @@ td_lambtha = __import__('1-td_lambtha').td_lambtha
 
 np.random.seed(0)
 
-env = gym.make('FrozenLake8x8-v0')
+env = gym.make('FrozenLake8x8-v1')
 LEFT, DOWN, RIGHT, UP = 0, 1, 2, 3
 
 def policy(s):

@@ -6,7 +6,7 @@ monte_carlo = __import__('0-monte_carlo').monte_carlo
 
 np.random.seed(0)
 
-env = gym.make('FrozenLake8x8-v0')
+env = gym.make('FrozenLake8x8-v1', render_mode="rgb_array")
 LEFT, DOWN, RIGHT, UP = 0, 1, 2, 3
 
 def policy(s):
@@ -32,5 +32,4 @@ def policy(s):
 
 V = np.where(env.desc == b'H', -1, 1).reshape(64).astype('float64') 
 np.set_printoptions(precision=2)
-env.seed(0)
 print(monte_carlo(env, V, policy).reshape((8, 8)))
