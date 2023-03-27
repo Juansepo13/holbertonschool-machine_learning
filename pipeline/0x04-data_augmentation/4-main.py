@@ -2,7 +2,11 @@
 
 import tensorflow as tf
 import tensorflow_datasets as tfds
+import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
+
+matplotlib.use('Agg')
 change_brightness = __import__('4-brightness').change_brightness
 
 tf.compat.v1.enable_eager_execution()
@@ -12,3 +16,4 @@ doggies = tfds.load('stanford_dogs', split='train', as_supervised=True)
 for image, _ in doggies.shuffle(10).take(1):
     plt.imshow(change_brightness(image, 0.3))
     plt.show()
+    plt.savefig('4-brightness.png')

@@ -2,8 +2,11 @@
 
 import tensorflow as tf
 import tensorflow_datasets as tfds
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+
+matplotlib.use('Agg')
 pca_color = __import__('100-pca').pca_color
 
 tf.compat.v1.enable_eager_execution()
@@ -14,3 +17,4 @@ for image, _ in doggies.shuffle(10).take(1):
     alphas = np.random.normal(0, 0.1, 3)
     plt.imshow(pca_color(image, alphas))
     plt.show()
+    plt.savefig('100-pca.png')

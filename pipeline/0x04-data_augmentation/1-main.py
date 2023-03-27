@@ -2,7 +2,10 @@
 
 import tensorflow as tf
 import tensorflow_datasets as tfds
+import matplotlib
 import matplotlib.pyplot as plt
+
+matplotlib.use('Agg')
 crop_image = __import__('1-crop').crop_image
 
 tf.compat.v1.enable_eager_execution()
@@ -12,3 +15,4 @@ doggies = tfds.load('stanford_dogs', split='train', as_supervised=True)
 for image, _ in doggies.shuffle(10).take(1):
     plt.imshow(crop_image(image, (200, 200, 3)))
     plt.show()
+    plt.savefig('1-crop')
