@@ -16,4 +16,4 @@ doggies = tfds.load('stanford_dogs', split='train', as_supervised=True)
 for image, _ in doggies.shuffle(10).take(1):
     plt.imshow(flip_image(image))
     plt.show()
-    plt.savefig('0-flip.py')
+    plt.savefig('0-flip.png')
